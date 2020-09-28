@@ -38,17 +38,53 @@ int main(void)
     // Set pin LOW in Data Register (LED off)
     // PORTB = PORTB and 1101 1111
     PORTB = PORTB & ~(1<<LED_GREEN);
-	// & funkce and ~ nagace
+	// & funkce and ~ negace
 
     // Infinite loop
     while (1)
     {
         // Pause several miliseconds
+		// D
+		 _delay_ms(SHORT_DELAY*2);
+		 PORTB = PORTB ^ (1<<LED_GREEN);
+		 _delay_ms(SHORT_DELAY*2);
+		 PORTB = PORTB ^ (1<<LED_GREEN);
+		 _delay_ms(SHORT_DELAY);
+		 PORTB = PORTB ^ (1<<LED_GREEN);
+		 _delay_ms(SHORT_DELAY);
+		 PORTB = PORTB ^ (1<<LED_GREEN);
+		 _delay_ms(SHORT_DELAY);
+		 PORTB = PORTB ^ (1<<LED_GREEN);
+		 _delay_ms(SHORT_DELAY);
+		 PORTB = PORTB ^ (1<<LED_GREEN);
+		 _delay_ms(SHORT_DELAY*4);
+			
+		//E
+        PORTB = PORTB ^ (1<<LED_GREEN);
+		_delay_ms(SHORT_DELAY);
+		PORTB = PORTB ^ (1<<LED_GREEN);
+		_delay_ms(SHORT_DELAY*4);
+		
+		// 2
+        PORTB = PORTB ^ (1<<LED_GREEN);
         _delay_ms(SHORT_DELAY);
-
+        PORTB = PORTB ^ (1<<LED_GREEN);
+        _delay_ms(SHORT_DELAY);
+        PORTB = PORTB ^ (1<<LED_GREEN);
+        _delay_ms(SHORT_DELAY);
+        PORTB = PORTB ^ (1<<LED_GREEN);
+        _delay_ms(SHORT_DELAY*2);
+        PORTB = PORTB ^ (1<<LED_GREEN);
+		_delay_ms(SHORT_DELAY*2);
+		PORTB = PORTB ^ (1<<LED_GREEN);
+		_delay_ms(SHORT_DELAY*2);
+        PORTB = PORTB ^ (1<<LED_GREEN);
+        _delay_ms(SHORT_DELAY*2);
+        PORTB = PORTB ^ (1<<LED_GREEN);
+        _delay_ms(SHORT_DELAY*4);																
+		
         // Invert LED in Data Register
         // PORTB = PORTB xor 0010 0000
-        PORTB = PORTB ^ (1<<LED_GREEN);
 		// ^ funkce xor 
     }
 
