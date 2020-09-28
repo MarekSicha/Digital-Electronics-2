@@ -33,7 +33,7 @@ int main(void)
     // Set pin as output in Data Direction Register
     // DDRB = DDRB or 0010 0000
     DDRB = DDRB | (1<<LED_GREEN);
-	// | funkce or  << shift 1 na poyici LED_GREEN
+	// | funkce or  << shift 1 na pozici LED_GREEN
 	
     // Set pin LOW in Data Register (LED off)
     // PORTB = PORTB and 1101 1111
