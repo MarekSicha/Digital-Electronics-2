@@ -23,6 +23,6 @@
 
 ![](Images/Button_active_high.png)
 
-### PB active low
+### PB active low 
 
 ![](Images/Button_active_low.png)
