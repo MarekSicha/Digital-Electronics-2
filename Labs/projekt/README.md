@@ -24,6 +24,8 @@ Je 8 bitový mikrokontrolér Atmel RISC od společnosti Atmel kombinuje 32 kB IS
 
 Je senzor pro měření vzdálenosti v rozsahu od 2 cm do 4m, obsahuje 4 piny: napájení (5V), zem, Trigger a Echo. Popis funkce je následující. Senzor dostane startovací aspoň 10us dlouhý puls na pin Trigger. Poté modul vyšle 8 cyklů ultrazvuku o frekvenci 40kHz a nastaví Echo pin na High. Jakmile se vyslaný signál odrazí od překážky a vrátí zpátky na Echo, tak se Echo nastaví na Low. Pokud se signál nevrátí do 38 ms, nastaví se Echo automaticky na low. Výsledná vzdálenost je pak  součinem doby vysoké úrovně Echa, rychlostí zvuku, jelikož puls musí urazit vzdálenost dvakrát je potřeba součin vydělit dvěma.
 
+![gif](https://lastminuteengineers.com/wp-content/uploads/arduino/HC-SR04-Ultrasonic-Sensor-Working-Echo-reflected-from-Obstacle.gif)
+
 ## Popis kódu
 
 Hlavní soubor je [main.c](main.c), který obsahuje:
