@@ -21,7 +21,7 @@ Je 8 bitový mikrokontrolér Atmel RISC od společnosti Atmel kombinuje 32 kB IS
 
 ## Popis kódu
 
-Hlavní soubor je main.c, který obsahuje:
+Hlavní soubor je [main.c](main.c), který obsahuje:
 1.	Definice použitých pinů
 2.	Seznam použitých knihoven
 3.	Globální proměnné
