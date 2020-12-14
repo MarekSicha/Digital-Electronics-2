@@ -12,6 +12,7 @@ Vytvořit aplikaci parkovacího asistenta pomocí dvou ultrazvukových senzorů 
 ## Popis Software
 
 SimulIDE: Jednoduchý simulátor elektronických obvodů v reálném čase.
+
 Atmel Studio: Je integrované vývojové prostředí pro vývoj a ladění aplikací založených na procesorech Atmel a mikrokontolérů Atmel.
 
 ## Popis Hardware
