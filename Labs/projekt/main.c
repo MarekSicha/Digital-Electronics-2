@@ -49,29 +49,29 @@ volatile uint8_t first_High_Right = 0;
 int main(void)
 {
 	
-	GPIO_config_output(&DDRC,P_Trigger_Left);		// set PC4 as output
-	GPIO_write_low(&PORTC,P_Trigger_Left);			// set PC4 low
-	GPIO_config_input_nopull(&DDRC,P_Echo_Left);		// set PC5 as input
+    GPIO_config_output(&DDRC,P_Trigger_Left);		// set PC4 as output
+    GPIO_write_low(&PORTC,P_Trigger_Left);		// set PC4 low
+    GPIO_config_input_nopull(&DDRC,P_Echo_Left);	// set PC5 as input
 	
-	GPIO_config_output(&DDRC,P_Trigger_Right);		// set PC2 as output
-	GPIO_write_low(&PORTC,P_Trigger_Right);			// set PC2 low
-	GPIO_config_input_nopull(&DDRC,P_Echo_Right);		// set PC3 as input
+    GPIO_config_output(&DDRC,P_Trigger_Right);		// set PC2 as output
+    GPIO_write_low(&PORTC,P_Trigger_Right);		// set PC2 low
+    GPIO_config_input_nopull(&DDRC,P_Echo_Right);	// set PC3 as input
 	
-	GPIO_config_output(&DDRC,Audio);			// set PC0 as output
-	GPIO_write_low(&PORTC,Audio);				// set PC0 low
+    GPIO_config_output(&DDRC,Audio);			// set PC0 as output
+    GPIO_write_low(&PORTC,Audio);			// set PC0 low
 	
-	// Configuration all LEDs as output
-	GPIO_config_output(&DDRB,PB2);
-	GPIO_config_output(&DDRB,PB3);
-	GPIO_config_output(&DDRB,PB4);
-	GPIO_config_output(&DDRB,PB5);
-	GPIO_config_output(&DDRB,PB6);
+    // Configuration all LEDs as output
+    GPIO_config_output(&DDRB,PB2);
+    GPIO_config_output(&DDRB,PB3);
+    GPIO_config_output(&DDRB,PB4);
+    GPIO_config_output(&DDRB,PB5);
+    GPIO_config_output(&DDRB,PB6);
 
-	GPIO_config_output(&DDRD,PD0);
-	GPIO_config_output(&DDRD,PD1);
-	GPIO_config_output(&DDRD,PD2);
-	GPIO_config_output(&DDRD,PD3);
-	GPIO_config_output(&DDRC,PC6);
+    GPIO_config_output(&DDRD,PD0);
+    GPIO_config_output(&DDRD,PD1);
+    GPIO_config_output(&DDRD,PD2);
+    GPIO_config_output(&DDRD,PD3);
+    GPIO_config_output(&DDRC,PC6);
 	
     // Configure 8-bit Timer/Counter2
     // Enable interrupt and set the overflow prescaler to 16 us
@@ -88,18 +88,18 @@ int main(void)
     TIM0_overflow_16ms();
     TIM0_overflow_interrupt_enable();
 	
-	// Initialize LCD display
-	lcd_init(LCD_DISP_ON);
-	lcd_gotoxy(0,0);
-	lcd_puts("L Distance in cm:");
-	lcd_gotoxy(0,1);
-	lcd_puts("R Distance in cm:");
+    // Initialize LCD display
+    lcd_init(LCD_DISP_ON);
+    lcd_gotoxy(0,0);
+    lcd_puts("L Distance in cm:");
+    lcd_gotoxy(0,1);
+vlcd_puts("R Distance in cm:");
 	
     // Initialize UART to asynchronous, 8N1, 9600
     uart_init(UART_BAUD_SELECT(9600,F_CPU));
 	
-	// Enables interrupts by setting the global interrupt mask
-	sei();
+    // Enables interrupts by setting the global interrupt mask
+    sei();
 	
     // Infinite loop
     while (1)
