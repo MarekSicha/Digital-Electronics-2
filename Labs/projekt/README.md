@@ -19,6 +19,9 @@ Atmel Studio: Je integrované vývojové prostředí pro vývoj a ladění aplik
 Atmega 328p
 Je 8 bitový mikrokontrolér Atmel RISC od společnosti Atmel kombinuje 32 kB ISP flash paměť s možnostmi čtení a zápisu, 1 KB EEPROM, 2 KB SRAM, 23 univerzálních I / O linek, 32 univerzálních pracovních registrů, tři flexibilní časovače / čítače s režimy porovnání, interní a externí přerušení, sériové programovatelné USART. Zařízení pracuje mezi 1,8-5,5 volty. Zařízení dosahuje propustnosti blížící se 1 MIPS na MHz
 
+HC SR04
+Je senzor pro měření vzdálenosti v rozsahu od 2 cm do 4m, obsahuje 4 piny: napájení (5V), zem, Trigger a Echo. Popis funkce je následující. Senzor dostane startovací aspoň 10us dlouhý puls na pin Trigger. Poté modul vyšle 8 cyklů ultrazvuku o frekvenci 40kHz a nastaví Echo pin na High. Jakmile se vyslaný signál odrazí od překážky a vrátí zpátky na Echo, tak se Echo nastaví na Low. Pokud se signál nevrátí do 38 ms, nastaví se Echo automaticky na low. Výsledná vzdálenost je pak  součinem doby vysoké úrovně Echa, rychlostí zvuku, jelikož puls musí urazit vzdálenost dvakrát je potřeba součin vydělit dvěma.
+
 ## Popis kódu
 
 Hlavní soubor je [main.c](main.c), který obsahuje:
