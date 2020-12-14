@@ -60,12 +60,12 @@ Hlavní soubor je [main.c](main.c), který obsahuje:
 
 ## Vývojový Diagram
 
-Adresa
+![logic](../Images/Stavový diagram.PNG)
 
 
 ## Simulace, schéma zapojení
 
-adresa
+![logic](/Images/Simulace.PNG)
 
 
 ## Použité zdroje
