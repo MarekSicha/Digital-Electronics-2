@@ -16,7 +16,7 @@
 #define P_Trigger_Left PC4		// AVR pin where TRigger of left sensor is connected
 #define P_Echo_Right PC3		// AVR pin where Echo of right sensor is connected
 #define P_Trigger_Right PC2		// AVR pin where TRigger of right sensor is connected
-#define Audio PC0				// AVR pin where Audio output is connected
+#define Audio PC0			// AVR pin where Audio output is connected
 
 /* Includes ----------------------------------------------------------*/
 #include <avr/io.h>         // AVR device-specific IO definitions
@@ -25,8 +25,8 @@
 #include "lcd.h"            // Peter Fleury's LCD library
 #include <stdlib.h>         // C library. Needed for conversion function
 #include "uart.h"           // Peter Fleury's UART library
-#include "gpio.h"			// GPIO library for AVR-GCC
-#include <util/delay.h>		// Functions for busy-wait delay loops
+#include "gpio.h"	    // GPIO library for AVR-GCC
+#include <util/delay.h>	    // Functions for busy-wait delay loops
 
 /* Variables ---------------------------------------------------------*/
 
@@ -49,16 +49,16 @@ volatile uint8_t first_High_Right = 0;
 int main(void)
 {
 	
-	GPIO_config_output(&DDRC,P_Trigger_Left);			// set PC4 as output
-	GPIO_write_low(&PORTC,P_Trigger_Left);				// set PC4 low
+	GPIO_config_output(&DDRC,P_Trigger_Left);		// set PC4 as output
+	GPIO_write_low(&PORTC,P_Trigger_Left);			// set PC4 low
 	GPIO_config_input_nopull(&DDRC,P_Echo_Left);		// set PC5 as input
 	
-	GPIO_config_output(&DDRC,P_Trigger_Right);			// set PC2 as output
-	GPIO_write_low(&PORTC,P_Trigger_Right);				// set PC2 low
+	GPIO_config_output(&DDRC,P_Trigger_Right);		// set PC2 as output
+	GPIO_write_low(&PORTC,P_Trigger_Right);			// set PC2 low
 	GPIO_config_input_nopull(&DDRC,P_Echo_Right);		// set PC3 as input
 	
-	GPIO_config_output(&DDRC,Audio);					// set PC0 as output
-	GPIO_write_low(&PORTC,Audio);						// set PC0 low
+	GPIO_config_output(&DDRC,Audio);			// set PC0 as output
+	GPIO_write_low(&PORTC,Audio);				// set PC0 low
 	
 	// Configuration all LEDs as output
 	GPIO_config_output(&DDRB,PB2);
