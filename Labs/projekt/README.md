@@ -60,7 +60,7 @@ Hlavní soubor je [main.c](main.c), který obsahuje:
 
 ## Vývojový Diagram
 
-![Diagram](Images/Stavový diagram.png)
+![Diagram](Images/flow_chart.png)
 
 
 ## Simulace, schéma zapojení
