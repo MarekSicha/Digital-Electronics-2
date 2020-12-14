@@ -27,30 +27,30 @@ Hlavní soubor je main.c, který obsahuje:
 3.	Globální proměnné
 4.	Funkce main()
 
-•	Nastavení
-•	Konfigurace vstupních a výstupních pinů, nastavení jejich počáteční úrovně
-•	Konfiguraci časovačů a jejich povolení přetečení
-•	Konfiguraci UART a LCD displeje
-•	Globální povolení přerušení
+	a) Nastavení
+	  -	Konfigurace vstupních a výstupních pinů, nastavení jejich počáteční úrovně
+	  -	Konfiguraci časovačů a jejich povolení přetečení
+	  -	Konfiguraci UART a LCD displeje
+	  - Globální povolení přerušení
 
-•	Nekonečnou smyčku
-•	pokud Trigger_(Left, Right) = 0 pošle 10us startovací puls
-•	Kontroluje, jestli už je Echo ve vysoké úrovni a restartuje čítač pro daný senzor
-•	Kontroluje, jestli je Echo opět v nízké úrovni (nejprve musí projít vysokou úrovní (first_High_(Left, Right)) a vypočítá vzdálenost, kterou odešle příslušnému ISR
+	b)	Nekonečnou smyčku
+	  -	pokud Trigger_(Left, Right) = 0 pošle 10us startovací puls
+	  -	Kontroluje, jestli už je Echo ve vysoké úrovni a restartuje čítač pro daný senzor
+	  -	Kontroluje, jestli je Echo opět v nízké úrovni (nejprve musí projít vysokou úrovní (first_High_(Left, Right)) a vypočítá vzdálenost, kterou odešle příslušnému ISR
 
 5.	ISR(TIMER2_OVF_vect)
-•	Při každém přetečení přičítá jedničku pro každý senzor, doba přetečení je 16 us
-•	Podle vzdálenosti vysílá pulzy do Audio výstupu
+  -	Při každém přetečení přičítá jedničku pro každý senzor, doba přetečení je 16 us
+  -	Podle vzdálenosti vysílá pulzy do Audio výstupu
 
 6.	ISR(TIMER1_OVF_vect)
-•	Doba přetečení je 262 ms
-•	Stará se výhradně jen o Levý senzor
-•	Přijatou vzdálenost z nekonečné smyčky posílá do UARTu a zobrazuje na LCD displeji, podle vzdálenosti nastavuje počet aktivních ledek.
+  -	Doba přetečení je 262 ms
+  -	Stará se výhradně jen o Levý senzor
+ -Přijatou vzdálenost z nekonečné smyčky posílá do UARTu a zobrazuje na LCD displeji, podle vzdálenosti nastavuje počet aktivních ledek.
 
 7.	ISR(TIMER0_OVF_vect)
-•	Doba přetečení je 16 ms, ale vše se aktualizuje až po 6 přetečení tedy po 262 ms
-•	Stará se výhradně o pravý senzor
-•	Přijatou vzdálenost z nekonečné smyčky posílá do UARTu a zobrazuje na LCD displeji, podle vzdálenosti nastavuje počet aktivních ledek.
+  -	Doba přetečení je 16 ms, ale vše se aktualizuje až po 6 přetečení tedy po 262 ms
+  -	Stará se výhradně o pravý senzor
+  -	Přijatou vzdálenost z nekonečné smyčky posílá do UARTu a zobrazuje na LCD displeji, podle vzdálenosti nastavuje počet aktivních ledek.
 
 
 ## Vývojový Diagram
