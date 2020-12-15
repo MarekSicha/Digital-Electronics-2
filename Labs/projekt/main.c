@@ -93,7 +93,7 @@ int main(void)
     lcd_gotoxy(0,0);
     lcd_puts("L Distance in cm:");
     lcd_gotoxy(0,1);
-vlcd_puts("R Distance in cm:");
+    lcd_puts("R Distance in cm:");
 	
     // Initialize UART to asynchronous, 8N1, 9600
     uart_init(UART_BAUD_SELECT(9600,F_CPU));
