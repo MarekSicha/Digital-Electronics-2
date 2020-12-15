@@ -186,36 +186,36 @@ ISR(TIMER2_OVF_vect)
 	// Frequency setting depending on distance
 	if (distance  <= 100 && distance > 50)
 	{
-		if (freq_counter == 1250)
+		if (freq_counter == 188)
 		{
 			freq_counter =0;
-			GPIO_toggle(&PORTC,Audio);
+			GPIO_write_high(&PORTC,Audio);
 		}
 	}
 	else if (distance <= 50 && distance > 10 )
 	{
-		if (freq_counter == 625)
+		if (freq_counter == 38)
 		{
-			GPIO_toggle(&PORTC,Audio);
+			GPIO_write_high(&PORTC,Audio);
 			freq_counter =0;
 		}
 	}
 	else if (distance <= 10 &&distance > 2)
 	{
-		if (freq_counter == 312)
+		if (freq_counter == 8)
 		{
-			GPIO_toggle(&PORTC,Audio);
+			GPIO_write_high(&PORTC,Audio);
 			freq_counter =0;
 		}
 	}
 	else if (distance <= 2)
 	{
-		if (freq_counter == 156)
+		if (freq_counter == 5)
 		{
-			GPIO_toggle(&PORTC,Audio);
+			GPIO_write_high(&PORTC,Audio);
 			freq_counter =0;
 		}
-	}	
+	}		
 }
 
 /**
