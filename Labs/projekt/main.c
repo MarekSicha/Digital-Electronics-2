@@ -215,7 +215,11 @@ ISR(TIMER2_OVF_vect)
 			GPIO_write_high(&PORTC,Audio);
 			freq_counter =0;
 		}
-	}		
+	}
+	else
+	{
+		freq_counter =0;
+	}	
 }
 
 /**
